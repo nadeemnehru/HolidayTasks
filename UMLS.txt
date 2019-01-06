@@ -1,0 +1,63 @@
+UMLS consists of Knowledge Sources(databases) and programs that are used by developers to build or enhance systems that create, process, retrieve, and integrate biomedical and health data and information.
+The programs assist developers in customizing or using the UMLS Knowledge Sources for particular purposes.
+There are three UMLS Knowledge Sources: the Metathesaurus, the Semantic Network,and the SPECIALIST Lexicon.
+Metathesaurus database contains information about biomedical and health-related conepts, their names, and the relationships among them. It links alternative names and views of the same concept and identifies useful relationships between different concepts
+Lexical Tools are used to generate the word, normalized word, and normalized string indexes to the Metathesaurus.
+MetamorphoSys, an install and customization program, is used to install the UMLS Knowledge Sources and customize the Metathesaurus
+The Semantic Network provides a categorization of all concepts represented in the Metathesaurus and a set of useful relationships between these concepts. It contains 133 Semantic Types and 54 relationships.
+The SPECIALIST Lexicon is intended to be a general English lexicon that includes many biomedical terms.
+Metathesaurus contains concepts and concept names.
+Majority of the concept names present in the Metathesaurus come from one or moreof it source vocabularies. However, some concept names are created during Metathesaurus construction.
+There can be different names for the same concept from many different vocabularies.
+Examples of vocabularies are SNOMED CT, MeSH
+The concepts and concept names have unique, permanent identifiers.
+Concept structure includes concept names, their identifiers, their key characteristics (eg language, vocabulary source, name type)
+Names in source vocabularies have meaning and all the names from all of the source vocabularies that have same meaning should be linked by specially trained subject experts.
+The concept identifier(CUI) has no intrinsic meaning and it never changes.
+String identifier(SUI) is the unique and permanent identifier of a unique concept name or string in each language
+A string can have more than one meaning in which case,the SUI will be linked to more than one CUI
+
+The concept names or strings from each of the source vocabularies are the basic building blocks or "atoms" from which Metathesaurus is constructed.
+Every occurrence of a string in each source vocabulary is assigned a unique atom identifier(AUI).
+All of the AUIs of a string are linked to a single SUI as they represent occurrences of the same string
+Also a single AUI is linked to a single CUI, since each occurrence of a string in a source can only have one meaning
+A group of all strings that are lexical variants of each other is known as term.
+Each string in the English language is linked to all of its lexical variants or minor variations by means of a common term identifier (LUI).
+Like SUI, LUI may be linked to more than one CUI when the lexical variants have different meanings.
+Each concept in the Metathesaurus has a default preferred name which is one of the strings from one of the English terms
+Different concepts in the source vocabularies may be related.The relationships may also be added during Metathesaurus construction.
+An example of relationship is the synonymous relationship
+An example of non synonymous relationship is that between a bacterial infection and the bacterium that causes it.
+Relationship between concepts in the same source vocabulary is known as intra-source vocabulary relationship and relationship between concepts in different source vocabularies is known as inter-source vocabulary relationship.
+Every relationship in the Metathesaurus has a unique relationship identifier whose primary purpose is to enable easy detection of changes in relationships across versions of the Metathesaurus.
+Each Metathesaurus concept is assigned at least one semantic type
+
+
+
+Different files
+MRCONSO:
+MRCUI: Retired CUIs i.e. CUIs that were used in previous versions but were removed
+MRRANK: Default order or precedence of strings
+AMBIGLUI and AMBIGSUI: LUIs and SUIs respectively of ambiguous terms and strings
+MRREL, MRCXT, MRHIER: Relationship files
+MRSAT:
+MRFILES:
+MRCOLS:
+MRDOC:
+MRSTY:
+MRHIST:
+MRMAP:
+MRSAB:
+DELETEDCUI:
+MERGEDCUI:
+DELETEDLUI:
+MERGEDLUI:
+DELETEDSUI:
+MRAUI:
+MRXNW_ENG:
+MRXNS_ENG:
+
+The Semantic Network provides information about the set of basic semantic types, or categories and it defines the set of relationships that may hold between the semantic types. Examples of semantic types are biologic function, physical object, organism, anatomical structure, chemicals, events.
+There are both hierarchical and non-hierarchical relations between the semantic types. "isa" is a hierarchical relation and "manages", "treats", and "prevents" are examples of non-hierarchical relations
+The relations are stated between high level semantic types in the Semantic Network whenever possible and the relations are inherited via the "isa" link by all the children of those types.
+The relations specified between semantic types do not necessarily apply to all instances of concepts that have been assigned to those semantic types

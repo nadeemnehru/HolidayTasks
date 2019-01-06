@@ -1,0 +1,23 @@
+HaVoc is an API that provides applications with access to the information in the UMLS. It allows one to retrieve:
+1) Details about a particular concept in the UMLS
+2) The children of a concept in the UMLS
+3) The parents of a concept in the UMLS
+4) The synonyms for a medical term
+5) The abbreviations of a medical term
+6) Related terms 
+
+Retrieve details about a particular concept with CUI "cui":
+Base URL: http://havoc.appliedinformaticsinc.com/concepts
+Required Parameters: cui, the user and token
+
+Retrieve synonyms for some concept with CUI "cui"
+Base URL: http://havoc.appliedinformaticsinc.com/concepts/cui/synonyms
+Required Parameters: the user and token
+
+Retrieve all the children of a concept with CUI "cui":
+Base URL: http://havoc.appliedinformaticsinc.com/concepts/cui/children
+Required Parameters:user and token
+
+Retrieve all the parents of a concept with CUI "cui":
+Base URL: http://havoc.appliedinformaticsinc.com/concepts/cui/parents
+Required Parameters: user and token
