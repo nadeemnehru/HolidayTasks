@@ -8,6 +8,7 @@ terms = []
 
 # Function to create set of all terms found in dataset files
 def collectTerms(filename):
+	print("Collecting terms, please wait")
 	for file in filename:
 		tree = ET.parse(file)
 		root = tree.getroot()
@@ -41,6 +42,9 @@ def collectTerms(filename):
 # Function to find CUI for a specific term
 def findCui(user, token):
 	print("Here is the set of terms: ", termSet)
+	print()
+	print()
+	print("="*100)
 	term = input("Enter the term from the set of terms displayed above for which to find CUI: ")
 	url = "http://havoc.appliedinformaticsinc.com/concepts"
 	parameters = {"term": term, "user": user, "token": token} 
@@ -48,6 +52,9 @@ def findCui(user, token):
 	cuis = []
 	for element in r.json():
 		cuis.append(element['cui'])
+	print()
+	print()
+	print("="*100)
 	print("Here is the list of CUIs associated with the term: ", cuis)
 
 # Function to find synonyms for a specific CUI
@@ -78,12 +85,13 @@ if __name__ == "__main__":
 		print()
 		print("3 - End the program")
 		choice = input()
-		user = input("Enter the user: ")
-		token = input("Enter the token: ")
-		if choice == "1":
-			findCui(user,token)
-		elif choice == "2":
-			findSynonyms(user,token)
-		elif choice == "3":
+		
+		if choice == "3":
 			break
-
+		else:
+			user = input("Enter the user: ")
+			token = input("Enter the token: ")
+			if choice == "1":
+				findCui(user,token)
+			elif choice == "2":
+				findSynonyms(user,token)
